@@ -5,5 +5,12 @@
 <% @kittens.each do |k| %>
   <%= k.attributes %>
 <% end %>
+<hr>
 
-<%= user_photos('132826669@N04') %>
+<% @photo_ish_things.each do |x| %>
+
+    <%= x.class %><br><br>
+    <%= x.methods.sort %><br><br>
+    <%= x %><br><br>
+
+<% end %>
