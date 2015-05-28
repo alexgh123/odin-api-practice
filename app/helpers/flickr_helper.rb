@@ -1,5 +1,24 @@
 module FlickrHelper
 
+  #this is so bad and needs to be cleaned up
+
+  # I should really be able to have two variables, user id and photo id
+
+  def array_of_photo_urls(user_id)
+    id_array = []
+    photo_array = flickr.photos.search(:user_id=>user_id).to_a
+    photo_array.each do |x|
+      id_array << x.id
+    end
+    url_array = []
+    id_array.each do |p_id|
+      url_array << photo_url(p_id)
+    end
+    url_array
+  end
+
+  #### less important below
+
   def array_of_all_photo_ids_of_user(user_id)
     id_array = []
     photo_array = flickr.photos.search(:user_id=>user_id).to_a

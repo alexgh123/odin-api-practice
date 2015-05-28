@@ -5,9 +5,7 @@ class KittensController < ApplicationController
   def index
     @kittens = Kitten.all
 
-    @photo_id_array = array_of_all_photo_ids_of_user('132826669@N04')
-
-    @photo_url_list
+    @photo_url_array = array_of_photo_urls('132826669@N04')
 
     # @photo_ish_things = user_photos('132826669@N04')
 
