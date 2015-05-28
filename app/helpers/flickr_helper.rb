@@ -28,6 +28,7 @@ module FlickrHelper
     id_array
   end
 
+  #need this one
   def photo_url(photo_id)
     flickr.photos.getInfo(:photo_id =>photo_id).urls[0]._content
   end
