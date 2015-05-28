@@ -1,25 +1,46 @@
 module FlickrHelper
 
-def user_photos(user_id)
-  flickr.photos.search(:user_id => user_id)
-end #returns the user's photo-ish things
+  def array_of_all_photo_ids_of_user(user_id)
+    id_array = []
+    photo_array = flickr.photos.search(:user_id=>user_id).to_a
+    photo_array.each do |x|
+      id_array << x.id
+    end
+    id_array
+  end
 
-def phototset
-  flickr.photosets.getList(user_id: user.id).to_a.sample.id
-end
+  def photo_url(photo_id)
+    flickr.photos.getInfo(:photo_id =>photo_id).urls[0]._content
+  end
 
-# to get the actual photo an the information that is actually useful....
+  ###### not as important, but instructive for other uses of api ####
+
+  def array_of_photo_info(user_id)
+    flickr.photos.search(:user_id=>user_id).to_a
+  end
+
+  def photo_info(photo_id)
+    flickr.photos.getInfo(:photo_id =>photo_id)
+  end
 
 
-#returns the photo id of the 3rd photo of the photo like things
-flickr.photos.search(:user_id=>'132826669@N04').to_a[3].id
+
+
+
+# def user_photos(user_id)
+#   flickr.photos.search(:user_id => user_id)
+# end #returns the user's photo-ish things
+
+# def phototset
+#   flickr.photosets.getList(user_id: user.id).to_a.sample.id
+# end
 
 #returns all kind of info about the actual photo
-flickr.photos.getInfo(:photo_id =>"17974079119")
+# flickr.photos.getInfo(:photo_id =>"17974079119")
 
 #returns the actual photo
 
-flickr.photos.getInfo(:photo_id =>"17974079119").urls[0]._content
+# flickr.photos.getInfo(:photo_id =>"17974079119").urls[0]._content
 
 
 
