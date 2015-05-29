@@ -17,31 +17,33 @@ module FlickrHelper
     url_array
   end
 
-  #### less important below
-
-  def array_of_all_photo_ids_of_user(user_id)
-    id_array = []
-    photo_array = flickr.photos.search(:user_id=>user_id).to_a
-    photo_array.each do |x|
-      id_array << x.id
-    end
-    id_array
-  end
-
-  #need this one
+    #need this one
   def photo_url(photo_id)
     flickr.photos.getInfo(:photo_id =>photo_id).urls[0]._content
   end
 
+  #### less important below
+
+  # def array_of_all_photo_ids_of_user(user_id)
+  #   id_array = []
+  #   photo_array = flickr.photos.search(:user_id=>user_id).to_a
+  #   photo_array.each do |x|
+  #     id_array << x.id
+  #   end
+  #   id_array
+  # end
+
+
+
   ###### not as important, but instructive for other uses of api ####
 
-  def array_of_photo_info(user_id)
-    flickr.photos.search(:user_id=>user_id).to_a
-  end
+  # def array_of_photo_info(user_id)
+  #   flickr.photos.search(:user_id=>user_id).to_a
+  # end
 
-  def photo_info(photo_id)
-    flickr.photos.getInfo(:photo_id =>photo_id)
-  end
+  # def photo_info(photo_id)
+  #   flickr.photos.getInfo(:photo_id =>photo_id)
+  # end
 
 
 

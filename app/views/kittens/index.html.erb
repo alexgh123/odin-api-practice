@@ -2,14 +2,15 @@
 <p>Find me in app/views/kittens/index.html.erb</p>
 
 
+
 <% @kittens.each do |k| %>
   <%= k.attributes %>
 <% end %>
 <hr>
 
-<% @photo_url_array.each do |x| %>
+<% @photo_url_array.each do |photo_url| %>
 
-    <%= image_tag x %><br><br>
+    <%= image_tag(photo_url) %><br><br>
 
 <% end %>
 
