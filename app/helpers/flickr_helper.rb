@@ -1,9 +1,11 @@
 module FlickrHelper
 
+#goal = faster load times= don't load all the photos/info
+
   def array_of_photo_urls(user_id)
     id_array = []
-    photo_array = flickr.photos.search(:user_id=>user_id).to_a
-    photo_array.each do |x|
+    six_photo_array = flickr.photos.search(:user_id=>user_id).to_a[0..5]
+    six_photo_array.each do |x|
       id_array << x.id
     end
     url_array = []
