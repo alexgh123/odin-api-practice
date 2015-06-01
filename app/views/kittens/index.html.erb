@@ -17,7 +17,11 @@
 <!-- need to add a cache feature to speed up photo load -->
 <% @photo_url_array.each do |p_url| %>
 
-
+    <br>
+    url object passed to image_tag method:<br>
+    <%= p_url %>
+    <br><br>
+    the image output:<br>
 
     <%= image_tag(p_url) %><br><br>
 

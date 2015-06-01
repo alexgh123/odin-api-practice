@@ -16,7 +16,8 @@ module FlickrHelper
   end
 
   def photo_url(photo_id)
-    flickr.photos.getInfo(:photo_id =>photo_id).urls[0]._content
+    photo_thing = flickr.photos.getInfo(:photo_id =>photo_id)
+    FlickRaw.url_b(photo_thing)
   end
 
 
