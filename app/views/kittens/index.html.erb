@@ -2,6 +2,12 @@
 
 <p> Search for a flickr user (and some of their photos) using their ID:</p>
 
+<br>
+If you don't know the id, type the user's home page in at this address:
+<br>
+http://idgettr.com/
+<br>
+
 <%= form_tag("/", method: "get") do %>
   <%= text_field_tag(:id) %>
   <%= submit_tag("Search") %>
