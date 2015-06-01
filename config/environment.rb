@@ -6,8 +6,11 @@ Rails.application.initialize!
 
 require 'flickraw'
 
+
 FlickRaw.api_key=ENV["flickr_api_key"]
 FlickRaw.shared_secret=ENV["flickr_api_secret"]
+
+
 
 list   = flickr.photos.getRecent
 
@@ -22,3 +25,4 @@ sizes = flickr.photos.getSizes :photo_id => id
 
 original = sizes.find {|s| s.label == 'Original' }
 puts original.width       # => "800" -- may fail if they have no original marked image
+
