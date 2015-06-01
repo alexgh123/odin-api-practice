@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
 
 
+  root 'kittens#index'
+
+  # get "kittens/search" => "kittens#search"
+  #i know i need ^, but not sure why yet...embarased!
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
