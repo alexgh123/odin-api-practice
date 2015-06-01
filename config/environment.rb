@@ -10,8 +10,6 @@ require 'flickraw'
 FlickRaw.api_key=ENV["flickr_api_key"]
 FlickRaw.shared_secret=ENV["flickr_api_secret"]
 
-
-
 list   = flickr.photos.getRecent
 
 id     = list[0].id
@@ -25,4 +23,6 @@ sizes = flickr.photos.getSizes :photo_id => id
 
 original = sizes.find {|s| s.label == 'Original' }
 puts original.width       # => "800" -- may fail if they have no original marked image
+
+# FlickRaw.secure = false #https (emphasis on 's') images aren't loading on my local dev env and i want to see the pictures
 
