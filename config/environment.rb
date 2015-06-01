@@ -6,8 +6,8 @@ Rails.application.initialize!
 
 require 'flickraw'
 
-FlickRaw.api_key="b941a9b6380b00293e2f812c8fa4a3c3"
-FlickRaw.shared_secret="81cd8ed306ec86a3"
+FlickRaw.api_key=ENV["flickr_api_key"]
+FlickRaw.shared_secret=ENV["flickr_api_secret"]
 
 list   = flickr.photos.getRecent
 
