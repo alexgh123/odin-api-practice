@@ -1,7 +1,6 @@
-<h1>Kittens#index</h1>
-<p>Find me in app/views/kittens/index.html.erb</p>
 
-<p> Search for a flickr user using their ID:</p>
+
+<p> Search for a flickr user (and some of their photos) using their ID:</p>
 
 <%= form_tag("/", method: "get") do %>
   <%= text_field_tag(:id) %>
@@ -17,21 +16,11 @@
 <!-- need to add a cache feature to speed up photo load -->
 <% @photo_url_array.each do |p_url| %>
 
-    <br>
-    url object passed to image_tag method:<br>
-    <%= p_url %>
-    <br><br>
-    the image output:<br>
-
     <%= image_tag(p_url) %><br><br>
-
-
-
-
 
 <% end %>
 
 
-<img src="https://www.flickr.com/photos/132826669@N04/17537908124/" >
+
 
 
